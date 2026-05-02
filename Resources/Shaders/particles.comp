@@ -1,0 +1,90 @@
+#version 450
+
+layout (binding = 0) uniform ParameterUBO {
+    float deltaTime;
+} ubo;
+
+struct Particle {
+    vec4 position;
+    vec4 BasePositionMin;
+    vec4 BasePositionMax;
+    vec4 BaseSize;
+    vec4 size;
+    vec4 color;
+    vec4 rotation;
+    vec4 velocity;
+    vec4 angularVelocity;
+    vec4 life;
+};
+
+layout(std140, binding = 1) readonly buffer ParticleSSBOIn {
+    Particle particlesIn[];
+};
+
+layout(std140, binding = 2) buffer ParticleSSBOOut {
+    Particle particlesOut[];
+};
+
+layout (local_size_x = 256, local_size_y = 1, local_size_z = 1) in;
+
+#define RAND_MAX 0x7fff
+
+uint SimpleHash(uint s)
+{
+    s ^= 2747636419u;
+    s *= 2654435769u;
+    s ^= s >> 16;
+    s *= 2654435769u;
+    s ^= s >> 16;
+    s *= 2654435769u;
+    return s;
+}
+
+// returns random number between 0 and 1
+float Random01(uint seed)
+{
+    return float(SimpleHash(seed)) / 4294967295.0; // 2^32-1;
+}
+
+float Random(uint seed, float LO, float HI) {
+    return LO + (HI - LO) * Random01(seed);
+}
+
+void main()
+{
+    uint index = gl_GlobalInvocationID.x;
+
+    Particle particleIn = particlesIn[index];
+
+    vec4 newPosition = particleIn.position + (particleIn.velocity * ubo.deltaTime);
+    vec4 newRotation = particleIn.rotation + (particleIn.angularVelocity * ubo.deltaTime);
+
+    particlesOut[index].position = vec4(newPosition.xyz, 1.0);
+    particlesOut[index].rotation = vec4(newRotation.xyz, 1.0);
+    particlesOut[index].velocity = particleIn.velocity;
+
+    if (particleIn.life.x > 0.0f) {
+        particlesOut[index].life.x  = particlesIn[index].life.x - ubo.deltaTime;
+        float progress = 1 - particleIn.life.x / particleIn.life.z;
+        particlesOut[index].size.xyz    = particleIn.BaseSize.xyz * progress;
+
+        if (particlesOut[index].life.x <= 0.0f) {
+
+            uint seed = index + uint(gl_GlobalInvocationID.x);
+
+            float x = Random(seed + 1u, particleIn.BasePositionMin.x,   particleIn.BasePositionMax.x);
+            float y = Random(seed + 2u, particleIn.BasePositionMin.y,   particleIn.BasePositionMax.y);
+            float z = Random(seed + 3u, particleIn.BasePositionMin.z,   particleIn.BasePositionMax.z);
+            float t = Random(seed + 4u, particleIn.life.y,              particleIn.life.z);
+
+            particlesOut[index].life.x = t;
+            particlesOut[index].position = vec4(x, y, z, 1.0);
+        }
+    } else if (particlesOut[index].life.w > 0.0f) {
+
+        float progress = 1 - particleIn.life.z / particleIn.life.w;
+        particlesOut[index].size    = particleIn.BaseSize * progress;
+        particlesOut[index].life.z  += ubo.deltaTime;
+
+    }
+}

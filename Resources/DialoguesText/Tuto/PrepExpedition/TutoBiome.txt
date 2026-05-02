@@ -1,0 +1,2 @@
+[SILENE?]
+Sur Hestia, il existe 5 biomes à explorer et nous sommes actuellement dans celui des Perséphins. Tu peux changer de biome avec cette carte (non implémenté pour la démo).

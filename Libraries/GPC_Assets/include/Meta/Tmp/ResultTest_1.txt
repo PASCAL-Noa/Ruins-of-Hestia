@@ -1,0 +1,65 @@
+Resutlt :
+
+[INFO ] === Test Meta Round-Trip ===
+[INFO ] Original: 2 assets
+[INFO ] Write: OK
+[INFO ] Read: OK
+[INFO ] Valid: OK
+[INFO ] Count: 2 (expected 2)
+[INFO ] Asset 0: OK
+[INFO ] Asset 1: OK
+[INFO ] === Result: PASS ===
+
+
+
+Test :
+
+void TestMetaRoundTrip()
+{
+    GPC_INFO << "=== Test Meta Round-Trip ===" << ENDL;
+
+    GPC::MetaFile original;
+
+    GPC::MetaAsset tex;
+    tex.Type = GPC::MetaAssetType::TEXTURE;
+    tex.Name = "player_sprite";
+    tex.Path = "Resources/Images/player.png";
+    original.Assets.push_back(std::move(tex));
+
+    GPC::MetaAsset mesh;
+    mesh.Type = GPC::MetaAssetType::MESH;
+    mesh.Name = "cube";
+    mesh.Path = "Resources/Models/cube.obj";
+    mesh.Optional = true;
+    original.Assets.push_back(std::move(mesh));
+
+    GPC_INFO << "Original: " << original.AssetCount() << " assets" << ENDL;
+
+    GPC::MetaError writeErr = GPC::MetaWriter::Write(original, "test.meta");
+    GPC_INFO << "Write: " << (writeErr == GPC::MetaError::SUCCESS ? "OK" : "FAIL") << ENDL;
+
+    GPC::MetaFile loaded;
+    GPC::MetaError readErr = GPC::MetaReader::Read("test.meta", loaded);
+    GPC_INFO << "Read: " << (readErr == GPC::MetaError::SUCCESS ? "OK" : "FAIL") << ENDL;
+
+    GPC_INFO << "Valid: " << (loaded.IsValid() ? "OK" : "FAIL") << ENDL;
+    GPC_INFO << "Count: " << loaded.AssetCount() << " (expected 2)" << ENDL;
+
+    bool pass = true;
+    if (loaded.AssetCount() == 2)
+    {
+        auto* a0 = loaded.FindByName("player_sprite");
+        auto* a1 = loaded.FindByName("cube");
+
+        if (a0 && a0->Type == GPC::MetaAssetType::TEXTURE && a0->Path == "Resources/Images/player.png")
+            GPC_INFO << "Asset 0: OK" << ENDL;
+        else { GPC_ERROR << "Asset 0: FAIL" << ENDL; pass = false; }
+
+        if (a1 && a1->Type == GPC::MetaAssetType::MESH && a1->Optional == true)
+            GPC_INFO << "Asset 1: OK" << ENDL;
+        else { GPC_ERROR << "Asset 1: FAIL" << ENDL; pass = false; }
+    }
+    else pass = false;
+
+    GPC_INFO << "=== Result: " << (pass ? "PASS" : "FAIL") << " ===" << ENDL;
+}

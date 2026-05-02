@@ -1,0 +1,2 @@
+[SILENE?]
+Chaque bâtiment à un coût en ressources afin d'être construit.

@@ -1,0 +1,2 @@
+[CALI]
+Les ressources sont automatiquement prises quand Cali s'en rapproche.

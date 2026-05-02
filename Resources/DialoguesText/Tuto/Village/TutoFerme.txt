@@ -1,0 +1,8 @@
+[IRIS|CALI]
+D’abord, voici notre maison de cultivation. C’est là qu’on fait pousser notre nourriture.
+
+[CALI]
+(De “cultivation” ?... Ah, c’est une ferme.)
+
+[SILENE]
+Clique sur la ferme pour ouvrir son interface.

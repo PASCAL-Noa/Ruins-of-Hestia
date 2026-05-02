@@ -1,0 +1,38 @@
+[NARRATEUR]
+Deux habitants d’Hestia aperçoivent une étrange étoile filante en plein jour. L’objet s’écrase dans la plaine voisine. En s’approchant, ils découvrent un appareil inconnu contenant une femme inconsciente, attachée à un siège. Ils la sortent de l’épave et l’emmènent au village.
+
+[NARRATEUR]
+Cali reprend lentement connaissance dans une maison modeste. À ses cotés se tient une jeune femme au regard curieux.
+
+[IRIS|CALI]
+Ah, tu es réveillée. On t’a trouvée dans l’engin tombé du ciel et ramenée ici.
+
+[CALI|IRIS]
+Je… je n’ai blessé personne ?
+
+[IRIS|CALI]
+Non. Tout va bien. Tu es en sécurité.
+
+[CALI|IRIS]
+Où suis-je… ?
+
+[NARRATEUR]
+Iris l’aide à se lever et la conduit à l’extérieur, où un vieil homme somnole devant une jeune pousse.
+
+[IRIS|SILENE]
+Silène, notre invitée aimerait comprendre où elle est.
+
+[SILENE|CALI]
+Hm ? Ah… Bienvenue, jeune fille. Cette terre se nomme Hestia.
+
+[SILENE|CALI]
+Autrefois, nos peuples vivaient en paix. Puis une immense créature a traversé le ciel dans un vacarme terrible.
+
+[SILENE|CALI]
+Depuis ce jour, beaucoup changent. Ils deviennent violents, se regroupent en bandes et attaquent les villages. De quoi te rappelles-tu ?
+
+[CALI|SILENE]
+…Je ne me souviens que de mon nom. Cali.
+
+[SILENE|CALI]
+Alors peut-être que ton arrivée ici n’est pas un hasard. Je laisse Iris te faire faire le tour du village.

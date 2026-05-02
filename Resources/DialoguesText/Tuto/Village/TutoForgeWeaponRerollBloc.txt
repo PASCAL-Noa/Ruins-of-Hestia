@@ -1,0 +1,2 @@
+[SILENE?]
+Sélectionne un trait qui augmentera en fonction de la puissance de la gemme séléctionnée.

@@ -1,0 +1,2 @@
+[CALI]
+Pour bouger, appuie sur [ZQSD] ! Si un ennemi vous attaque, vous pouvez appuyer sur [Espace] pour esquiver.

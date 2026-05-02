@@ -1,0 +1,2 @@
+[CALI]
+Le feu de camp indique la fin de la mission, d'ici vous pourrez sois retourner au village et sauvegarder toutes les ressources ou passer a l'expedition suivante et prendre le risque de perdre une partie des ressources acquises (70%). Pour retourner au village appuyer sur [E].

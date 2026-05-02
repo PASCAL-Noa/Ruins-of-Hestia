@@ -1,0 +1,2 @@
+[CALI]
+Les ennemis seront attaque automatiquement des qu'il sont a portee d'attaque, ils seront toujours vise en premier par rapport aux ressources.

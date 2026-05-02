@@ -1,0 +1,68 @@
+[IRIS|CALI]
+Bon, puisqu’on sera toutes les deux responsables du village, vaut mieux te faire visiter d’abord.
+
+[IRIS|CALI]
+D’abord, voici notre maison de cultivation. C’est là qu’on fait pousser notre nourriture.
+
+[CALI]
+(De “cultivation” ?... Ah, c’est une ferme.)
+
+[IRIS|CALI]
+Là, c’est notre fabriquetterie. Elle nous sert surtout à fabriquer des outils, mais on va avoir besoin d’armes à cause de tous ces corrompus.
+
+[CALI]
+(On y fabrique des choses, y’ a une enclume... c’est clairement une forge.)
+
+[IRIS|CALI]
+Les fabricateurs auront besoin de ressources et de temps pour travailler. Ils pourront nous créer de l’équipement, et l’améliorer.
+
+[IRIS|CALI]
+Les cultivateurs vont s’occuper des champs et nous fournir un peu de nourriture chaque jour, pas besoin de surveiller en permanence.
+
+[IRIS|CALI]
+J’en ai entendu un parler de “reroll des traits sur les armes”, je sais pas trop ce que ça veut dire. Faudra voir directement avec eux.
+
+[IRIS|CALI]
+La soignerie, tu l’as déjà vue. Si quelqu’un se blesse pendant une expédition, il pourra prendre le temps de guérir ici.
+
+[CALI]
+(Donc c’est un hopital, c’est bien ce qu’il me semblait.)
+
+[CALI]
+(Je sais pas ce qui est le plus bizarre entre ces mots étranges, et le fait qu’ils aient l’air plus intuitifs que ceux de ma langue...)
+
+[IRIS|CALI]
+Ce bâtiment-là ne nous sert pas à grand chose, mais j’avais pensé en faire un endroit où on pourrait planifier des excursions.
+
+[IRIS|CALI]
+En gros, on rassemble des villageois volontaires, on leur donne de l’équipement, et on les envoie chercher des ressources ou sécuriser une zone pour agrandir le village.
+
+[IRIS|CALI]
+Mais je sais pas trop comment on appellerait ça...
+
+[CALI|IRIS]
+Une caserne, peut-être ?
+
+[IRIS|CALI]
+ca-zerne... ouais, ça sonne bien !
+
+[IRIS|CALI]
+Bien sûr, il faut des maisons pour abriter tout le monde. On peut pas faire dormir des gens dans la soignerie s’ils sont pas blessés ou malades.
+
+[IRIS|CALI]
+Tant qu’on aura des maisons de libres, on pourra même accueillir d’autres survivants si on en croise pendant une expédition. Notre seule limite, c’est la place dont on dispose pour en construire d’autres.
+
+[IRIS|CALI]
+Ah, et là c’est l’Arbre de vie. C’est-
+
+[SILENE|CALI]
+C’est la chose la plus important’ du village. Si on s’en occupe bien, il nous don’ra des fruits délicieux ! En plus ça f’sait longtemps qu’on voyait plus aucun d’ces arbres, chuis sûr qu’ça redon’ra l’sourire à tous ces jeûnots.
+
+[IRIS|CALI]
+...Ouais, c’est à peu près ce que je voulais dire. Merci Silène.
+
+[IRIS|CALI]
+On pourra aussi décorer un peu le village, histoire que tout le monde se sente chez soi ici. On est pas obligés de rapporter que des ressources utilisables de nos expéditions.
+
+[CALI|IRIS]
+Oui, des troupes avec un moral haut, c’est des troupes plus efficaces.

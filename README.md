@@ -1,6 +1,6 @@
 ## Ruins of Heastia v1.0
 
->Cette release marque l'aboutissement de 2 mois de développement intensif. Elle couvre la création des briques fondamentales du moteur C++ personnalisé (GPC Engine) jusqu'à l'implémentation complète de la boucle de gameplay de gestion du Village et d'expédition.
+>This release marks the culmination of 2 months of intensive development. It covers everything from the creation of the foundational building blocks of the custom C++ engine (GPC Engine) to the full implementation of the Village management and expedition gameplay loop.
 
 <p align="center">
   <img width="60%" alt="affiche A4" src="https://github.com/user-attachments/assets/1ac52a4c-319c-4e1e-a2a5-871087338e0a" />
@@ -8,44 +8,45 @@
 
 ---
 
-### Moteur & Architectutre
-- Architecture ECS : Mise en place d'un modèle Entité-Composant-Système garantissant la modularité et la maintenabilité du code.
+### Engine & Architecture
 
-- Rendu Vulkan : Implémentation du pipeline graphique sous Vulkan. Intégration des ombres et d'un système de particules avancé entièrement calculé sur le GPU via des Compute Shaders.
+- ECS Architecture: Implementation of an Entity-Component-System model ensuring code modularity and maintainability.
 
-- Moteur Audio : Développement du système de son natif et spatiale. Prise en charge des fichiers WAV, séparation des canaux (Music / SFX), gestion du looping et contrôle des volumes en temps réel via les paramètres.
+- Vulkan Rendering: Implementation of the graphics pipeline using Vulkan. Integration of shadows and an advanced particle system fully computed on the GPU via Compute Shaders.
 
-- Asset Manager : Chargement optimisé des ressources (textures, spritesheets animées, shaders, audio).
+- Audio Engine: Development of a native and spatial sound system. Support for WAV files, channel separation (Music / SFX), looping management, and real-time volume control via settings.
 
-- UI Builder Reactif : Création d'une API déclarative (UiBuilder) pour générer les interfaces complexes, incluant un système de Hitboxes strict, des ancrages dynamiques, et du data-binding (UiReactive) pour la mise à jour en temps réel.
+- Asset Manager: Optimized loading of resources (textures, animated spritesheets, shaders, audio).
 
-- Sauvegarde : Implémentation d'arbre bianaire pour le système de sauvegarde.
+- Reactive UI Builder: Creation of a declarative API (UiBuilder) to generate complex interfaces, including a strict Hitbox system, dynamic anchoring, and data-binding (UiReactive) for real-time updates.
 
-- Easing : Implémentation d'un système de Tween, pratique pour créer de nombreux effet facilement avec des maths.
+- Save System: Implementation of binary trees for the save system.
 
-- FBX loader : Le moteur est en capacité de jouer des animations FBX.
+- Easing: Implementation of a Tweening system, useful for easily creating numerous effects using math.
+
+- FBX Loader: The engine is capable of playing FBX animations.BX.
 
 --- 
 
-### Gameplay : Le Village
+### Gameplay : The Village
 
 <p align="center">
 <img width="70%"  alt="image" src="https://github.com/user-attachments/assets/dbc68a6f-de2c-4984-8f92-ea1328120a8f" />
 </p>
 
-- Construction & Placement : Système de grille spatiale permettant d'ajouter, déplacer ou stocker des bâtiments (Fermes, Maisons, Forge) avec gestion des collisions et callbacks liés aux instances.
-
+- Construction & Placement: Spatial grid system allowing players to add, move, or store buildings (Farms, Houses, Forge) with collision management and instance-bound callbacks.
+  
 <p align="center">
 <img width="70%"  alt="image" src="https://github.com/user-attachments/assets/28140309-7b5e-4854-99c0-0dcb7c3ec3cf" />
 </p>
 
-- Boutique & Gestion de l'Inventaire : Suivi des ressources primaires (Bois, Pierre, Métal, Fibre, Nourriture) et du stockage des équipements et gemmes du village. Avec ces ressources vous pouvez acheter de nouveaux bâtiments et améliorer votre équipement dans la forge.
-
+- Shop & Inventory Management: Tracking of primary resources (Wood, Stone, Metal, Fiber, Food) alongside the storage of village equipment and gems. With these resources, you can purchase new buildings and upgrade your equipment in the forge.
+  
 <p align="center">
 <img width="70%"  alt="image" src="https://github.com/user-attachments/assets/e360efb0-ec8f-4790-aed0-e685fc8ecb84" />
 </p>
 
-- Sauvegarde & Paramètres : Sérialisation de l'état du village (ressources, placements) et gestion des paramètres utilisateur (sauvegarde des préférences audio).
+- Saves & Settings: Serialization of the village state (resources, placements) and user settings management (saving audio preferences).
 
 <p align="center">
 <img width="70%"  alt="image" src="https://github.com/user-attachments/assets/bfbcffcb-bef3-4864-ad26-71f1b7da1d39" />
@@ -53,31 +54,43 @@
 
 --- 
 
-### Gameplay : L'Expédition
+### Gameplay : The Expedition
 
 <p align="center">
 <img width="70%"  alt="image" src="https://github.com/user-attachments/assets/14ea38db-8b46-42ae-abbf-165a5a68a05f" />
 <img width="70%"  alt="image" src="https://github.com/user-attachments/assets/0a61c36a-130e-49bd-87e1-350641ac1477" />
 </p>
 
-- Génération Procédurale : Création d'environnements uniques à chaque départ. La carte, la répartition des ennemis et des ressources sont générées dynamiquement pour assurer une rejouabilité infinie.
+- Procedural Generation: Creation of unique environments for every run. The map, enemy distribution, and resources are dynamically generated to ensure infinite replayability.
 
 <p align="center">
 <img width="70%"  alt="image" src="https://github.com/user-attachments/assets/db06da5e-a0de-4ebe-9bad-cb00a8cf2af2" />
 </p>
 
-- Récolte de Ressources : Exploration des niveaux permettant de collecter les matériaux et les gemmes qui serviront de retour au village pour l'artisanat et le développement.
+- Resource Gathering: Level exploration allows players to collect materials and gems that will be used back at the village for crafting and development.
 
 <p align="center">
 <img width="70%"  alt="image" src="https://github.com/user-attachments/assets/dc83eec0-ff4b-43b9-949b-19ec39440376" />
 </p>
 
-- Combats & Mobs : C'est ici que les statistiques de l'équipement forgé au village prennent tout leur sens.
+- Combat & Mobs: This is where the stats of the equipment forged in the village truly shine.
 
 <p align="center">
 <img width="70%"  alt="image" src="https://github.com/user-attachments/assets/44b0309c-6c68-4cd5-9dcb-cd7a1352465c" />
 </p>
 
 ---
+
+### Built With
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Vulkan-C41E3A?style=for-the-badge&logo=vulkan&logoColor=white" alt="Vulkan" />
+  <img src="https://img.shields.io/badge/CMake-064F8C?style=for-the-badge&logo=cmake&logoColor=white" alt="CMake" />
+  <img src="https://img.shields.io/badge/RtAudio-2D3436?style=for-the-badge&logo=c%2B%2B&logoColor=white" alt="RtAudio" />
+  <img src="https://img.shields.io/badge/GLM-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white" alt="GLM" />
+  <img src="https://img.shields.io/badge/GLFW-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white" alt="GLFW" />
+  <img src="https://img.shields.io/badge/CLion-000000?style=for-the-badge&logo=clion&logoColor=white" alt="CLion" />
+  <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" alt="Git" />
+</p>
 
 
